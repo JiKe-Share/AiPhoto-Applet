@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "cmd-progress": "/components/cmd-progress/cmd-progress",
+    "wxad": "/components/wxad/wxad",
+    "wyb-popup": "/components/wyb-popup/wyb-popup",
+    "login": "/components/login/login",
+    "getinte": "/components/getinte/getinte"
+  }
+}

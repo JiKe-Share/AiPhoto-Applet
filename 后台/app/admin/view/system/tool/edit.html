@@ -1,0 +1,254 @@
+<style>
+    .layui-iconpicker-body.layui-iconpicker-body-page .hide {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="__STATIC__/plugs/lay-module/autocomplete/autocomplete.css?v={$version}" media="all">
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+<div class="layui-form-item">
+            <label class="layui-form-label">标识</label>
+            <div class="layui-input-block">
+                <input type="text" name="bs" class="layui-input" lay-verify="required" lay-reqtext="名称" placeholder="名称" value="{$row.bs|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" class="layui-input" lay-verify="required" lay-reqtext="名称" placeholder="名称" value="{$row.name|default=''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">显示标题</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" class="layui-input" lay-verify="required" lay-reqtext="名称" placeholder="名称" value="{$row.title|default=''}">
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+        <label class="layui-form-label">封面显示</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="img" class="layui-input layui-col-xs6" placeholder="请上传外链图标"  value="{$row.img|default=''}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="img" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_img" data-upload-select="img" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+              {if $row.bs =='hzp'}
+              <br>
+                <div class="layui-form-mid layui-word-aux">不支持视频，可以上传gif作为封面图</div>
+                {/if}
+        </div>
+        
+    </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">描述（介绍）</label>
+            <div class="layui-input-block">
+                <input type="text" name="desc" class="layui-input"  placeholder="外链介绍"  value="{$row.desc|default=''}">
+            </div>
+        </div>
+
+       <div class="layui-form-item">
+        <label class="layui-form-label required">位置：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="type" value="1" title="AI工具页" lay-filter="type" {if $row.type ==1}checked=""{/if}>
+            <input type="radio" name="type" value="2" title="人脸趣玩页" lay-filter="type" {if $row.type ==2}checked=""{/if}>
+            
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">展示用原图</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="y" class="layui-input layui-col-xs6" placeholder="请上传图片"  value="{$row.y|default=''}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="y" {if $row.bs =='aikt'}data-upload-number="two"{else}data-upload-number="one"{/if}><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_y" data-upload-select="y" {if$row.bs =='aikt'}data-upload-number="two"{else}data-upload-number="one"{/if}><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+              {if $row.bs =='aikt'}
+    <div class="layui-form-mid layui-word-aux">此效果可上传多个原图，依顺序为1.通用抠图原图 2.商品抠图原图 3.人像抠图原图</div><br>
+    {/if}
+        </div>
+    </div>
+    
+    
+    
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">展示效果图</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="x" class="layui-input layui-col-xs6" placeholder="请上传图片"  value="{$row.x|default=''}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="x"  {if $row.bs =='txfgzh'||$row.bs =='rxtx'||$row.bs =='rxmhf'||$row.bs =='aikt'||$row.bs =='bqbj'}data-upload-number="two"{else}data-upload-number="one"{/if}><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_x" data-upload-select="x"  {if $row.bs =='txfgzh'||$row.bs =='rxtx'||$row.bs =='rxmhf'||$row.bs =='aikt'||$row.bs =='bqbj'}data-upload-number="two"{else}data-upload-number="one"{/if}><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+            
+            
+            {if $row.bs =='bqbj'}
+    <div class="layui-form-mid layui-word-aux">此效果可上传多个对应效果图，依顺序为1.张嘴笑 2.嘟嘟嘴 3.不高兴 4.闭嘴笑</div><br>
+    {/if}
+            {if $row.bs =='hzp'}
+    <div class="layui-form-mid layui-word-aux">可以上传视频直接作为效果，mp4格式</div><br>
+    {/if}
+            {if $row.bs =='txfgzh'}
+    <div class="layui-form-mid layui-word-aux">此效果可上传多个对应效果图，依顺序为1.卡通画风格 2.铅笔风格 3.彩色铅笔画风格 4.彩色糖块油画风格 5.神奈川冲浪里油画风格 6.薰衣草油画风格 7.奇异油画风格 8.呐喊油画风格 9.哥特油画风格</div><br>
+    {/if}
+    {if $row.bs =='rxtx'}
+    <div class="layui-form-mid layui-word-aux">此效果可上传多个对应效果图，依顺序为1.皮克斯 2.3D卡通风 3.天使 4.恶魔 5.浮世绘 6.波普风 7.美漫风 </div><br>
+    {/if}
+    {if $row.bs =='rxmhf'}
+    <div class="layui-form-mid layui-word-aux">此效果可上传多个对应效果图，依顺序为1.人像日漫风 2.全图日漫风 3.国潮风 4.复古漫画风 5.萌漫风  </div><br>
+    {/if}
+     {if $row.bs =='aikt'}
+    <div class="layui-form-mid layui-word-aux">此效果可上传多个对应效果图，依顺序为1.通用抠图效果 2.商品抠图效果 3.人像抠图效果</div><br>
+    {/if}
+    
+        </div>
+        
+    </div>
+    <div class="layui-form-item"  {if $row.bs !='txfgzh'}style="display:none;"{/if}>
+		        <label class="layui-form-label required">默认展示效果：</label>
+		        <div class="layui-input-block">
+		            
+		            <input type="radio" name="mrfg" value="0" title="卡通画风格" lay-filter="mrfg" {if $row.mrfg ==0}checked=""{/if}>
+		            <input type="radio" name="mrfg" value="1" title="铅笔风格" lay-filter="mrfg" {if $row.mrfg ==1}checked=""{/if}>
+		             <input type="radio" name="mrfg" value="2" title="彩色铅笔画风格" lay-filter="mrfg" {if $row.mrfg ==2}checked=""{/if}>
+		              <input type="radio" name="mrfg" value="3" title="彩色糖块油画风格" lay-filter="mrfg" {if $row.mrfg ==3}checked=""{/if}>
+		               <input type="radio" name="mrfg" value="4" title="神奈川冲浪里油画风格" lay-filter="mrfg" {if $row.mrfg ==4}checked=""{/if}>
+		                <input type="radio" name="mrfg" value="5" title="薰衣草油画风格" lay-filter="mrfg" {if $row.mrfg ==5}checked=""{/if}>
+		                 <input type="radio" name="mrfg" value="6" title="奇异油画风格" lay-filter="mrfg" {if $row.mrfg ==6}checked=""{/if}>
+		                 <input type="radio" name="mrfg" value="7" title="呐喊油画风格" lay-filter="mrfg" {if $row.mrfg ==7}checked=""{/if}>
+		            <input type="radio" name="mrfg" value="8" title="哥特油画风格" lay-filter="mrfg" {if $row.mrfg ==8}checked=""{/if}>
+		        </div>
+		    </div>
+    <div class="layui-form-item"  {if $row.bs !='rxtx'}style="display:none;"{/if}>
+		        <label class="layui-form-label required">默认展示效果：</label>
+		        <div class="layui-input-block">
+		            
+		            <input type="radio" name="mrfg" value="0" title="皮克斯" lay-filter="mrfg" {if $row.mrfg ==0}checked=""{/if}>
+		            <input type="radio" name="mrfg" value="1" title="3D卡通风" lay-filter="mrfg" {if $row.mrfg ==1}checked=""{/if}>
+		             <input type="radio" name="mrfg" value="2" title="天使" lay-filter="mrfg" {if $row.mrfg ==2}checked=""{/if}>
+		              <input type="radio" name="mrfg" value="3" title="恶魔" lay-filter="mrfg" {if $row.mrfg ==3}checked=""{/if}>
+		               <input type="radio" name="mrfg" value="4" title="浮世绘" lay-filter="mrfg" {if $row.mrfg ==4}checked=""{/if}>
+		                <input type="radio" name="mrfg" value="5" title="波普风" lay-filter="mrfg" {if $row.mrfg ==5}checked=""{/if}>
+		                 <input type="radio" name="mrfg" value="6" title="美漫风" lay-filter="mrfg" {if $row.mrfg ==6}checked=""{/if}>
+		        </div>
+		    </div>
+	<div class="layui-form-item"  {if $row.bs !='rxmhf'}style="display:none;"{/if}>
+		 <label class="layui-form-label required">默认展示效果：</label>
+		    <div class="layui-input-block">
+		         <input type="radio" name="mrfg" value="0" title="人像日漫风" lay-filter="mrfg" {if $row.mrfg ==0}checked=""{/if}>
+		         <input type="radio" name="mrfg" value="1" title="全图日漫风" lay-filter="mrfg" {if $row.mrfg ==1}checked=""{/if}>
+		         <input type="radio" name="mrfg" value="2" title="国潮风" lay-filter="mrfg" {if $row.mrfg ==2}checked=""{/if}>
+		          <input type="radio" name="mrfg" value="3" title="复古漫画风" lay-filter="mrfg" {if $row.mrfg ==3}checked=""{/if}>
+		          <input type="radio" name="mrfg" value="4" title="萌漫风" lay-filter="mrfg" {if $row.mrfg ==4}checked=""{/if}>
+		      </div>
+	</div>
+	
+	<div class="layui-form-item"  {if $row.bs !='aikt'}style="display:none;"{/if}>
+		 <label class="layui-form-label required">默认展示效果：</label>
+		    <div class="layui-input-block">
+		         <input type="radio" name="mrfg" value="0" title="通用抠图" lay-filter="mrfg" {if $row.mrfg ==0}checked=""{/if}>
+		         <input type="radio" name="mrfg" value="1" title="商品抠图" lay-filter="mrfg" {if $row.mrfg ==1}checked=""{/if}>
+		         <input type="radio" name="mrfg" value="2" title="人物抠图" lay-filter="mrfg" {if $row.mrfg ==2}checked=""{/if}>
+		      </div>
+	</div>
+	
+	<div class="layui-form-item"  {if $row.bs !='bqbj'}style="display:none;"{/if}>
+		 <label class="layui-form-label required">默认展示效果：</label>
+		    <div class="layui-input-block">
+		         <input type="radio" name="mrfg" value="0" title="张嘴笑" lay-filter="mrfg" {if $row.mrfg ==0}checked=""{/if}>
+		         <input type="radio" name="mrfg" value="1" title="嘟嘟嘴" lay-filter="mrfg" {if $row.mrfg ==1}checked=""{/if}>
+		         <input type="radio" name="mrfg" value="2" title="不高兴" lay-filter="mrfg" {if $row.mrfg ==2}checked=""{/if}>
+		      <input type="radio" name="mrfg" value="3" title="闭嘴笑" lay-filter="mrfg" {if $row.mrfg ==2}checked=""{/if}>
+		      </div>
+	</div>
+	
+  <div class="layui-form-item">
+        <label class="layui-form-label required">VIP免费/专属：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="isvip" value="1" title="开启" lay-filter="isvip" {if $row.isvip ==1}checked=""{/if}>
+            <input type="radio" name="isvip" value="0" title="关闭" lay-filter="isvip" {if $row.isvip ==0}checked=""{/if}>
+        </div>
+        <div class="layui-form-mid layui-word-aux">是否VIP用户打开不消耗积分，如果积分为0开启此项，则仅限VIP用户使用</div>
+    </div>
+
+<div class="layui-form-item">
+            <label class="layui-form-label">需要消耗积分:</label>
+            <div class="layui-input-block">
+                <input type="number" name="inte" class="layui-input"  placeholder="使用此功能需要消耗积分数"  value="{$row.inte|default=''}">
+                <div class="layui-form-mid layui-word-aux">填0不消耗</div>
+            </div>
+        </div>
+           <div class="layui-form-item">
+        <label class="layui-form-label required">激励广告使用：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="adgo" value="1" title="开启" {if $row.adgo ==1}checked=""{/if}>
+            <input type="radio" name="adgo" value="0" title="关闭"  {if $row.adgo ==0}checked=""{/if}>
+        </div>
+        <div class="layui-form-mid layui-word-aux">开启后，用户积分不足时，会显示看一段广告快捷使用功能</div>
+    </div>
+           <div class="layui-form-item">
+        <label class="layui-form-label required">激励广告保存：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="adsave" value="1" title="开启" lay-filter="adsave" {if $row.adsave ==1}checked=""{/if}>
+            <input type="radio" name="adsave" value="0" title="关闭" lay-filter="adsave" {if $row.adsave ==0}checked=""{/if}>
+        </div>
+        <div class="layui-form-mid layui-word-aux">用户处理完图片是否需要看广告</div>
+    </div>
+         <div class="layui-form-item">
+        <label class="layui-form-label required">微信端：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="wx" value="1" title="显示" {if $row.wx==1}checked=""{/if}>
+            <input type="radio" name="wx" value="0" title="隐藏" {if $row.wx==0}checked=""{/if}>
+        </div>
+        <div class="layui-form-mid layui-word-aux">是否在微信端显示</div>
+    </div>
+    
+     <div class="layui-form-item">
+        <label class="layui-form-label required">字节端：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="zj" value="1" title="显示" {if $row.zj==1}checked=""{/if} >
+            <input type="radio" name="zj" value="0" title="隐藏" {if $row.zj==0}checked=""{/if}>
+        </div>
+        <div class="layui-form-mid layui-word-aux">是否在字节跳动端显示</div>
+    </div>
+    
+        
+        <div class="layui-form-item">
+        <label class="layui-form-label required">是否显示：</label>
+        <div class="layui-input-block">
+          <input type="radio" name="status" value="1" title="显示" lay-filter="status" {if $row.status ==1}checked=""{/if}>
+            <input type="radio" name="status" value="0" title="隐藏" lay-filter="status" {if $row.status ==0}checked=""{/if}>
+        </div>
+        <div class="layui-form-mid layui-word-aux">可适当隐藏某些功能规避审核</div>
+    </div>
+        
+       <div class="layui-form-item">
+            <label class="layui-form-label">排序:</label>
+            <div class="layui-input-block">
+                <input type="number" name="sort" class="layui-input"  placeholder="输入排序等级" value="{$row.sort|default=''}">
+                <div class="layui-form-mid layui-word-aux">数字越大越靠前</div>
+            </div>
+            
+        </div>
+
+
+
+
+
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

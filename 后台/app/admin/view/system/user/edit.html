@@ -1,0 +1,56 @@
+<style>
+    .layui-iconpicker-body.layui-iconpicker-body-page .hide {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="__STATIC__/plugs/lay-module/autocomplete/autocomplete.css?v={$version}" media="all">
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" class="layui-input" lay-verify="required" value="{$row.username|default=''}" disabled="disabled">
+            </div>
+        </div>
+        
+         <div class="layui-form-item">
+        <label class="layui-form-label">头像</label>
+        <img src="{$row.userimg|default=''}" width="50px">
+    </div>
+
+
+      <div class="layui-form-item">
+            <label class="layui-form-label">VIP到期时间</label>
+             <div class="layui-input-inline">
+                        <input type="text" name="viptime" id="viptime" lay-verify="viptime" placeholder="yyyy-MM-dd HH:mm:ss" autocomplete="off" class="layui-input" lay-key="1" value="{$row.viptime|date='Y-m-d H:i:s' }">
+                    </div>
+        </div>
+    
+    
+    
+    
+    
+        <div class="layui-form-item">
+            <label class="layui-form-label">积分:</label>
+            <div class="layui-input-block">
+                <input type="number" name="inte" class="layui-input"  placeholder="" value="{$row.inte|default=''}">
+            </div>
+        </div>
+      
+       
+        
+        
+
+
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>
+<script>
+    var nxs = "{$row.xs|default=''}";
+</script>

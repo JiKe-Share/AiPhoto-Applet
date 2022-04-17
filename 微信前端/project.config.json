@@ -1,0 +1,83 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "",
+  "appid": "wx28d5843cc36f5171",
+  "projectname": "AI图片修复",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "current": -1,
+      "list": []
+    },
+    "miniprogram": {
+      "current": 0,
+      "list": [
+        {
+          "name": "首页",
+          "query": "",
+          "id": 0,
+          "pathName": "pages/index/index"
+        },
+        {
+          "name": "人脸趣玩",
+          "query": "",
+          "id": 1,
+          "pathName": "pages/face/index"
+        },
+        {
+          "name": "更多工具",
+          "query": "",
+          "id": 2,
+          "pathName": "pages/wxapp/wxapp"
+        },
+        {
+          "name": "功能页",
+          "query": "id=1",
+          "id": 3,
+          "pathName": "pages/tool/aitool"
+        },
+        {
+          "name": "个人中心",
+          "query": "",
+          "id": 4,
+          "pathName": "pages/my/my"
+        },
+        {
+          "name": "使用记录",
+          "query": "",
+          "id": 5,
+          "pathName": "pages/my/log"
+        },
+        {
+          "name": "充值",
+          "query": "",
+          "id": 6,
+          "pathName": "pages/my/pay"
+        },
+        {
+          "name": "任务",
+          "query": "",
+          "id": 7,
+          "pathName": "pages/my/task"
+        }
+      ]
+    }
+  }
+}

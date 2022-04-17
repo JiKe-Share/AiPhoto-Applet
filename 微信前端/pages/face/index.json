@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "人脸趣玩",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "wxad": "/components/wxad/wxad",
+    "login": "/components/login/login"
+  }
+}

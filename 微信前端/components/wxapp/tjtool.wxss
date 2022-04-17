@@ -1,0 +1,22 @@
+
+.tjtool{
+	width: 95%;
+	margin: 10rpx auto;
+}
+.tjtool .tooltitle{
+	
+	text-align: left;
+}
+.toolsapp{
+	width: 100%;
+	white-space:nowrap;
+}
+.go{
+	padding: 10rpx 25rpx;
+	background-color: #1CBBB4;
+	color: #ffffff;
+	display: inline-block;
+	margin-right: 10rpx;
+	border-radius: 50rpx;
+}
+

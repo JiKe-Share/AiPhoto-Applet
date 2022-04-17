@@ -1,0 +1,223 @@
+
+    
+<form id="app-form" class="layui-form layuimini-form">
+
+      <div class="layui-form-item">
+					  <label class="layui-form-label">顶部背景颜色1</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_topbg1" value="{:sysconfig('config','config_topbg1')}" placeholder="请选择颜色" class="layui-input" id="color1-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="color1-form"></div>
+					  </div>
+				  </div>
+				  
+		 <div class="layui-form-item">
+					  <label class="layui-form-label">顶部背景颜色2</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_topbg2" value="{:sysconfig('config','config_topbg2')}" placeholder="请选择颜色" class="layui-input" id="color2-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="color2-form"></div>
+					  </div>
+				  </div>
+   
+   
+    <div class="layui-form-item">
+					  <label class="layui-form-label">个人中心顶部背景颜色1</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_mytopbg1" value="{:sysconfig('config','config_mytopbg1')}" placeholder="请选择颜色" class="layui-input" id="mycolor1-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="mycolor1-form"></div>
+					  </div>
+				  </div>
+				  
+		 <div class="layui-form-item">
+					  <label class="layui-form-label">个人中心顶部背景颜色2</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_mytopbg2" value="{:sysconfig('config','config_mytopbg2')}" placeholder="请选择颜色" class="layui-input" id="mycolor2-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="mycolor2-form"></div>
+					  </div>
+				  </div>
+   
+   
+   
+   
+   <div class="layui-form-item">
+        <label class="layui-form-label required">顶部文字颜色：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="config_front_color" value="#ffffff" title="白色"  {if sysconfig('config','config_front_color')=="#ffffff"}checked=""{/if}>
+            <input type="radio" name="config_front_color" value="#000000" title="黑色"  {if sysconfig('config','config_front_color')=="#000000"}checked=""{/if}>
+           
+        </div>
+    </div>
+    
+     <div class="hr-line"></div>
+    
+     <div class="layui-form-item">
+        <label class="layui-form-label">引导关注文字</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_tip" class="layui-input" lay-verify="required" placeholder="请输入" value="{:sysconfig('config','config_tip')}">
+            <tip>引导用户添加到我的小程序文字</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">引导关注默认展示时间</label>
+        <div class="layui-input-block">
+            <input type="number" name="config_duration" class="layui-input" lay-verify="required" placeholder="" value="{:sysconfig('config','config_duration')}">
+            <tip>单位：秒</tip>
+        </div>
+    </div>
+    
+     <div class="layui-form-item">
+					  <label class="layui-form-label">引导关注模块背景色</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_tipbg" value="{:sysconfig('config','config_tipbg')}" placeholder="请选择颜色" class="layui-input" id="tipbg-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="tipbg-form"></div>
+					  </div>
+				  </div>
+				  
+		 <div class="layui-form-item">
+					  <label class="layui-form-label">引导关注模块文字色</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_tipcolor" value="{:sysconfig('config','config_tipcolor')}" placeholder="请选择颜色" class="layui-input" id="tipcolor-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="tipcolor-form"></div>
+					  </div>
+				  </div>
+    
+     <div class="hr-line"></div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">首页轮播图高度</label>
+        <div class="layui-input-block">
+            <input type="number" name="site_roth" class="layui-input" lay-verify="required" placeholder="" value="{:sysconfig('site','site_roth')}">
+            <tip>单位：rpx</tip>
+        </div>
+    </div>
+    
+     <div class="hr-line"></div>
+     <div class="layui-form-item">
+					  <label class="layui-form-label">底部菜单背景色</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="site_tabbarbg" value="{:sysconfig('site','site_tabbarbg')}" placeholder="请选择颜色" class="layui-input" id="tabbarbg-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="tabbarbg-form"></div>
+					  </div>
+				  </div>
+	  <div class="layui-form-item">
+					  <label class="layui-form-label">底部菜单边框色</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="site_tabbarbo" value="{:sysconfig('site','site_tabbarbo')}" placeholder="请选择颜色" class="layui-input" id="tabbarbo-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="tabbarbo-form"></div>
+					  </div>
+				  </div>
+				<div class="layui-form-item">
+					  <label class="layui-form-label">底部菜单文字默认色</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="site_tabbartext" value="{:sysconfig('site','site_tabbartext')}" placeholder="请选择颜色" class="layui-input" id="tabbartext-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="tabbartext-form"></div>
+					  </div>
+				  </div>
+				  <div class="layui-form-item">
+					  <label class="layui-form-label">底部菜单文字选中色</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="site_tabbarstext" value="{:sysconfig('site','site_tabbarstext')}" placeholder="请选择颜色" class="layui-input" id="tabbarstext-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="tabbarstext-form"></div>
+					  </div>
+				  </div>
+		 <div class="hr-line"></div>
+            <div class="layui-form-item">
+        <label class="layui-form-label">积分名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_intename" class="layui-input" lay-verify="required" placeholder="请输入积分名称" value="{:sysconfig('config','config_intename')}">
+            <tip>你的小程序所有积分均会以此显示，如“额度”，“金币”等</tip>
+        </div>
+    </div>
+    
+     <div class="layui-form-item">
+        <label class="layui-form-label">积分图标</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="config_inteimg" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传积分图标" value="{:sysconfig('config','config_inteimg')}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="config_inteimg" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_config_inteimg" data-upload-select="config_inteimg" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+     <div class="layui-form-item">
+					  <label class="layui-form-label">积分按钮背景颜色1</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_intebg1" value="{:sysconfig('config','config_intebg1')}" placeholder="请选择颜色" class="layui-input" id="intecolor1-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="intecolor1-form"></div>
+					  </div>
+				  </div>
+				  
+		 <div class="layui-form-item">
+					  <label class="layui-form-label">积分按钮背景颜色2</label>
+					  <div class="layui-input-inline">
+						  <input type="text" name="config_intebg2" value="{:sysconfig('config','config_intebg2')}" placeholder="请选择颜色" class="layui-input" id="intecolor2-form-input">
+					  </div>
+					  <div class="layui-inline" style="left: -11px;">
+						  <div id="intecolor2-form"></div>
+					  </div>
+				  </div>
+    <div class="hr-line"></div>
+     
+     <div class="layui-form-item">
+        <label class="layui-form-label">登录卡片背景图</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="site_loginbg" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传背景图" value="{:sysconfig('site','site_loginbg')}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="site_loginbg" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_site_loginbg" data-upload-select="site_loginbg" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+    
+     <div class="layui-form-item">
+        <label class="layui-form-label">登录提醒文字</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_logints" class="layui-input" lay-verify="required" placeholder="请输入" value="{:sysconfig('config','config_logints')}">
+            <tip>引导用户登录的文字</tip>
+        </div>
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="system.config/save" data-refresh="false">确认</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+    </div>
+
+</form>
+<script>
+    var topbg1 = "{:sysconfig('config','config_topbg1')}";
+    var topbg2 = "{:sysconfig('config','config_topbg2')}";
+    var mytopbg1 = "{:sysconfig('config','config_mytopbg1')}";
+    var mytopbg2 = "{:sysconfig('config','config_mytopbg2')}";
+    var intebg1 = "{:sysconfig('config','config_intebg1')}";
+    var intebg2 = "{:sysconfig('config','config_intebg2')}";
+    var tipbg = "{:sysconfig('config','config_tipbg')}";
+    var tipcolor = "{:sysconfig('config','config_tipcolor')}";
+    var tabbarbg = "{:sysconfig('site','site_tabbarbg')}";
+    var tabbarbo = "{:sysconfig('site','site_tabbarbo')}";
+    var tabbartext = "{:sysconfig('site','site_tabbartext')}";
+    var tabbarstext = "{:sysconfig('site','site_tabbarstext')}";
+</script>

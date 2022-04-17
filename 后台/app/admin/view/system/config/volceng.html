@@ -1,0 +1,36 @@
+
+<form id="app-form" class="layui-form layuimini-form">
+
+    <blockquote class="layui-elem-quote">
+           火山引擎对于图片的处理主要为：发型改变，活照片，表情编辑，3D游戏特效等等<br>
+           如果你还没有开通火山引擎接口，可以点击按钮去注册开通👉 
+           <a href="https://www.volcengine.com/product/Human-body" target="_blank" class="layui-btn">火山引擎人工智能</a>
+        </blockquote>
+    
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">Access Key ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ai_volak" class="layui-input" lay-verify="required" placeholder="输入ak" value="{:sysconfig('ai','ai_volak')}">
+            <tip>在个人中心密钥管理中查看，没有就新建一个</tip>
+        </div>
+    </div>
+
+
+<div class="layui-form-item">
+        <label class="layui-form-label">Secret Access Key：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ai_volsk" class="layui-input" lay-verify="required" placeholder="输入sk" value="{:sysconfig('ai','ai_volsk')}">
+            <tip>在个人中心密钥管理中查看，没有就新建一个</tip>
+        </div>
+    </div>
+   
+
+     
+
+    <div class="hr-line"></div>
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="system.config/save" data-refresh="false">确认</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+    </div>
+</form>

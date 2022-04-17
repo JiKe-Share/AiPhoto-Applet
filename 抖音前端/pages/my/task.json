@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "签到任务",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "our-loading": "/components/our-loading/our-loading",
+    "ttad": "/components/wxad/ttad",
+    "inad": "/components/wxad/inad"
+  }
+}

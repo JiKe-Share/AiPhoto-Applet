@@ -1,0 +1,86 @@
+
+.body{
+		width: 100%;
+		margin: 20rpx auto;
+		/* height: 200rpx; */
+		background-color: #ffffff;
+		padding: 20rpx 0rpx;
+}
+.body .mk{
+		width: 95%;
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		margin: auto;
+}
+.mk .body-s{
+		    width: 40%;
+		    height: 120rpx;
+		margin-bottom: 20rpx;
+		box-sizing: content-box;
+		/* border-radius: 20rpx; */
+		    /* border: 1rpx solid rgba(0,0,0,.2); */
+		    border-radius: 20rpx 20rpx 40rpx 20rpx;
+		    padding: 20rpx;
+		    font-size: 26rpx;
+		    position: relative;
+}
+.mk .body-s .cl{
+		width: 100%;
+		height: 100%;
+		position: relative;
+}
+.mk .body-s .bodytext{
+		text-align: left;
+		position: absolute;
+		top: 50%;
+		width: 70%;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		left:0rpx;
+		display: inline-block;
+		color: #ffffff;
+}
+.mk .body-s .bodyimg{
+		width: 28%;
+		position: absolute;
+		top: 50%;
+		text-align: center;
+		right: 0rpx;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		display: inline-block;
+}
+.mk .body-s .bodyimg .boimg{
+		width: 100%;
+		border-radius: 100%;
+}
+.mk .body-s .bodytext .bodytitle{
+		font-size: 30rpx;
+		font-weight: 700;
+}
+.mk .body-s .bodytext .bodydesc{
+		font-size: 25rpx;
+		word-break: break-all;
+		    text-overflow: ellipsis;
+		    display: -webkit-box;
+		    -webkit-box-orient: vertical;
+		    -webkit-line-clamp: 1; /* 这里是超出几行省略 */
+		    overflow: hidden;
+}
+.body-s .cl::after {
+border: none;
+}
+.body-s .cl {
+background-color: transparent;
+padding-left: 0;
+padding-right: 0;
+line-height:inherit;
+width: 100%;
+text-align: center;
+}
+.body-s .cl {
+border-radius:0;
+}
+
+

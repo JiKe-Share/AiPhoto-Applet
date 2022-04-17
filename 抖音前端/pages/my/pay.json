@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "充值",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "wxad": "/components/wxad/wxad",
+    "our-loading": "/components/our-loading/our-loading",
+    "u-parse": "/components/feng-parse/parse",
+    "inad": "/components/wxad/inad"
+  }
+}

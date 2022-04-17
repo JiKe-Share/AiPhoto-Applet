@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/weblist/weblist",
+    "pages/my/my",
+    "pages/face/face",
+    "pages/face/index",
+    "pages/tool/aitool",
+    "pages/wxapp/wxapp",
+    "pages/my/about",
+    "pages/my/log",
+    "pages/my/imglog",
+    "pages/my/pay",
+    "pages/my/task"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#00aaff",
+    "backgroundColor": "#ffffff"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#8a8a8a",
+    "selectedColor": "#17abe3",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/image/tabbar/index.png",
+        "selectedIconPath": "static/image/tabbar/index-s.png",
+        "text": "AI工具"
+      },
+      {
+        "pagePath": "pages/face/index",
+        "iconPath": "static/image/tabbar/face.png",
+        "selectedIconPath": "static/image/tabbar/face-s.png",
+        "text": "人脸趣玩"
+      },
+      {
+        "pagePath": "pages/wxapp/wxapp",
+        "iconPath": "static/image/tabbar/wxapp.png",
+        "selectedIconPath": "static/image/tabbar/wxapp-s.png",
+        "text": "更多工具"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/image/tabbar/my.png",
+        "selectedIconPath": "static/image/tabbar/my-s.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 1000000,
+    "connectSocket": 100000,
+    "uploadFile": 1000000,
+    "downloadFile": 100000
+  },
+  "permission": {},
+  "usingComponents": {
+    "login": "/components/login/login",
+    "getinte": "/components/getinte/getinte",
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "u-parse": "/components/feng-parse/parse",
+    "wxad": "/components/wxad/wxad",
+    "inad": "/components/wxad/inad",
+    "tjwxapp": "/components/wxapp/tjwxapp",
+    "lbwxapp": "/components/wxapp/lbwxapp",
+    "tjtool": "/components/wxapp/tjtool",
+    "add-tip": "/wxcomponents/struggler-uniapp-add-tip/struggler-uniapp-add-tip",
+    "wyb-popup": "/components/wyb-popup/wyb-popup",
+    "our-loading": "/components/our-loading/our-loading",
+    "cmd-progress": "/components/cmd-progress/cmd-progress"
+  },
+  "sitemapLocation": "sitemap.json"
+}

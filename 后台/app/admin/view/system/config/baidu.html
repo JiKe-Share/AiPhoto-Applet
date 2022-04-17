@@ -1,0 +1,43 @@
+
+<form id="app-form" class="layui-form layuimini-form">
+
+    <blockquote class="layui-elem-quote">
+           百度AI对于图片的处理主要为：黑白图像上色/图像风格转换/人像动漫化/图像无损放大/图像去雾/图像对比度增强/拉伸图像恢复/图像修复/图像清晰度增强<br>
+           如果你还没有开通百度AI接口，可以点击按钮去注册开通👉 
+           <a href="https://console.bce.baidu.com/ai/#/ai/imageprocess/overview/index" target="_blank" class="layui-btn">百度智能云</a>
+        </blockquote>
+    
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">AppID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ai_bdappid" class="layui-input" lay-verify="required" placeholder="请输入百度图像增强的APPID" value="{:sysconfig('ai','ai_bdappid')}">
+            <tip>在百度智能云-图像增强/图像特效模块-应用列表中，创建一个应用后获得</tip>
+        </div>
+    </div>
+
+
+<div class="layui-form-item">
+        <label class="layui-form-label">API Key：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ai_bdapikey" class="layui-input" lay-verify="required" placeholder="请输入百度图像增强的API Key" value="{:sysconfig('ai','ai_bdapikey')}">
+            <tip>在百度智能云-图像增强/图像特效模块-应用列表中，创建一个应用后获得</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">Secret Key：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ai_bdsecret" class="layui-input" lay-verify="required" placeholder="请输入百度图像增强的Secret Key" value="{:sysconfig('ai','ai_bdsecret')}">
+            <tip>在百度智能云-图像增强/图像特效模块-应用列表中，创建一个应用后获得</tip>
+        </div>
+    </div>
+
+     
+
+    <div class="hr-line"></div>
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="system.config/save" data-refresh="false">确认</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+    </div>
+</form>

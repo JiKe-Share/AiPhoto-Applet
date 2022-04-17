@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ttad": "/components/wxad/ttad"
+  },
+  "component": true
+}

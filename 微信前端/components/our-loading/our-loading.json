@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "rotate-plane": "/components/our-loading/loaders/rotate-plane"
+  },
+  "component": true
+}

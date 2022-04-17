@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "更多工具",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "wxad": "/components/wxad/wxad",
+    "login": "/components/login/login"
+  }
+}

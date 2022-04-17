@@ -1,0 +1,16 @@
+<!--miniprogram/custom-tab-bar/index.wxml-->
+
+<cover-view class="tab-bar" style="background-color: {{backgroundColor}};">
+  <cover-view class="tab-bar-border"  style="background-color: {{topBorderColor}};"></cover-view>
+  <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" >
+	<button class="cu-btn" wx:if="{{item.type!=4}}" data-url="{{item.url}}" data-index="{{index}}" data-type="{{item.type}}"  data-appid="{{item.appid}}" data-id="{{item.id}}" data-outimg = "{{item.outimg}}" bindtap="switchTab">
+    <cover-image src="{{selected === index ? item.sicon : item.icon}}"></cover-image>
+    <cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.name}}</cover-view>
+	</button>
+	<button class="cu-btn" wx:else open-type="contact">
+	<cover-image src="{{selected === index ? item.sicon : item.icon}}"></cover-image>
+	<cover-view style="color: {{selected === index ? selectedColor : color}}">{{item.name}}</cover-view>
+	</button>
+  </cover-view>
+</cover-view>
+ 

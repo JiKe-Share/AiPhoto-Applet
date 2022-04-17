@@ -1,0 +1,130 @@
+<style>
+    .layui-iconpicker-body.layui-iconpicker-body-page .hide {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="__STATIC__/plugs/lay-module/autocomplete/autocomplete.css?v={$version}" media="all">
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务标题</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" class="layui-input" lay-verify="required" lay-reqtext="请输入标题" placeholder="请输入任务标题" value="">
+            </div>
+        </div>
+        
+        
+        <div class="layui-form-item">
+        <label class="layui-form-label">任务图标</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="img" class="layui-input layui-col-xs6" placeholder="请上传任务图标" >
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="img" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_img" data-upload-select="img" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">任务描述</label>
+            <div class="layui-input-block">
+                <input type="text" name="desc" class="layui-input"  placeholder="任务描述" value="">
+            </div>
+        </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">任务平台：</label>
+        <div class="layui-input-block">
+          <input type="radio" name="pt" value="1" title="微信" lay-filter="pt" checked>
+            <input type="radio" name="pt" value="2" title="抖音" lay-filter="pt" >
+        </div>
+        <div class="layui-form-mid layui-word-aux">可适当隐藏某些功能规避审核</div>
+    </div>
+
+       <div class="layui-form-item">
+        <label class="layui-form-label required">任务类型：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="type" value="1" title="观看激励广告" checked="" lay-filter="type">
+            <input type="radio" name="type" value="2" title="试玩其他小程序" lay-filter="type">
+          
+           <input type="radio" name="type" value="3" title="访问h5/公众号文章" lay-filter="type">
+         
+           <input type="radio" name="type" value="4" title="邀请好友" lay-filter="type">
+            <span id="dybs">
+                  <input type="radio"  name="type" value="5" title="分享给好友圈" lay-filter="type">
+            </span>
+         
+           <input type="radio" name="type" value="6" title="分享到朋友" lay-filter="type">
+        </div>
+    </div>
+    
+    
+    
+        <div class="layui-form-item" id="appid" style="display:none">
+            <label class="layui-form-label">appid:</label>
+            <div class="layui-input-block">
+                <input type="text" name="appid" class="layui-input"  placeholder="其他小程序的APPID" value="">
+            </div>
+        </div>
+        
+        <div class="layui-form-item" id="url"  style="display:none">
+            <label class="layui-form-label">路径/URL:</label>
+            <div class="layui-input-block">
+                <input type="text" name="url" class="layui-input"  placeholder="输入跳转的路径/链接" value="">
+            </div>
+        </div>
+        
+     <div class="layui-form-item" id="time"  style="display:none">
+            <label class="layui-form-label">需要试玩时间（秒）:</label>
+            <div class="layui-input-block">
+                <input type="number" name="time" class="layui-input"  placeholder="需要试玩多久才能拿到奖励" value="">
+            </div>
+        </div>
+    <div class="layui-form-item" id="inte">
+            <label class="layui-form-label">奖励积分:</label>
+            <div class="layui-input-block">
+                <input type="number" name="inte" class="layui-input"  placeholder="奖励积分数" value="">
+            </div>
+        </div>
+    <div class="layui-form-item" id="num">
+            <label class="layui-form-label">每日可做次数:</label>
+            <div class="layui-input-block">
+                <input type="number" name="num" class="layui-input"  placeholder="每天可做此任务N此" value="">
+            </div>
+        </div>
+    
+    
+   
+        
+        <div class="layui-form-item">
+        <label class="layui-form-label required">是否显示：</label>
+        <div class="layui-input-block">
+          <input type="radio" name="status" value="1" title="显示" lay-filter="status" checked>
+            <input type="radio" name="status" value="0" title="隐藏" lay-filter="status" >
+        </div>
+        <div class="layui-form-mid layui-word-aux">可适当隐藏某些功能规避审核</div>
+    </div>
+        
+       <div class="layui-form-item">
+            <label class="layui-form-label">排序:</label>
+            <div class="layui-input-block">
+                <input type="number" name="sort" class="layui-input"  placeholder="输入排序等级" value="0">
+                <div class="layui-form-mid layui-word-aux">数字越大越靠前</div>
+            </div>
+            
+        </div>
+
+
+
+
+
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

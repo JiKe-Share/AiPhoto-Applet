@@ -1,0 +1,48 @@
+.make .gointe.data-v-17411d5e {
+  position: fixed;
+  width: 80%;
+  padding: 20rpx 0rpx;
+  background-color: #ffffff;
+  z-index: 10078;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  box-shadow: 1rpx 1rpx 10rpx rgba(0, 0, 0, 0.5);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 20rpx;
+}
+.make .gointe button.data-v-17411d5e {
+  width: 80%;
+  border-radius: 50rpx;
+  margin: 20rpx auto 0rpx;
+  color: #ffffff;
+}
+.make .gointe button .text-gray.data-v-17411d5e {
+  color: #ffffff;
+  display: inline-block;
+  margin-right: 20rpx;
+  font-size: 35rpx;
+}
+.make .gointe button view.data-v-17411d5e {
+  display: inline-block;
+}
+.make .mask.data-v-17411d5e {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition-timing-function: ease;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  -webkit-backdrop-filter: blur(10px) brightness(110%);
+          backdrop-filter: blur(10px) brightness(110%);
+  z-index: 10076;
+}
+

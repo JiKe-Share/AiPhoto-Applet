@@ -1,0 +1,165 @@
+<style>
+    .layui-iconpicker-body.layui-iconpicker-body-page .hide {
+        display: none;
+    }
+</style>
+<link rel="stylesheet" href="__STATIC__/plugs/lay-module/autocomplete/autocomplete.css?v={$version}" media="all">
+<div class="layuimini-container">
+    <form id="app-form" class="layui-form layuimini-form">
+<div class="layui-form-item">
+            <label class="layui-form-label">标识</label>
+            <div class="layui-input-block">
+                <input type="text" name="bs" class="layui-input" lay-verify="required" lay-reqtext="名称" placeholder="名称" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" class="layui-input" lay-verify="required" lay-reqtext="名称" placeholder="名称" value="">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">显示标题</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" class="layui-input" lay-verify="required" lay-reqtext="名称" placeholder="名称" value="">
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+        <label class="layui-form-label">封面显示</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="img" class="layui-input layui-col-xs6" placeholder="请上传外链图标" >
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="img" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_img" data-upload-select="img" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+
+    
+        <div class="layui-form-item">
+            <label class="layui-form-label">描述（介绍）</label>
+            <div class="layui-input-block">
+                <input type="text" name="desc" class="layui-input"  placeholder="外链介绍" value="">
+            </div>
+        </div>
+
+       <div class="layui-form-item">
+        <label class="layui-form-label required">位置：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="type" value="1" title="AI工具页" lay-filter="type">
+            <input type="radio" name="type" value="2" title="人脸趣玩页" lay-filter="type">
+            
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">展示用原图</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="y" class="layui-input layui-col-xs6" placeholder="请上传外链图标" >
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="y" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_y" data-upload-select="y" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">展示效果图</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="x" class="layui-input layui-col-xs6" placeholder="请上传外链图标" >
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="x" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_x" data-upload-select="x" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+  <div class="layui-form-item">
+        <label class="layui-form-label required">VIP免费/专属：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="isvip" value="1" title="开启" lay-filter="isvip" >
+            <input type="radio" name="isvip" value="0" title="关闭" lay-filter="isvip" checked>
+        </div>
+        <div class="layui-form-mid layui-word-aux">是否VIP用户打开不消耗积分，如果积分为0开启此项，则仅限VIP用户使用</div>
+    </div>
+
+<div class="layui-form-item">
+            <label class="layui-form-label">需要消耗积分:</label>
+            <div class="layui-input-block">
+                <input type="number" name="inte" class="layui-input"  placeholder="使用此功能需要消耗积分数" value="0">
+                <div class="layui-form-mid layui-word-aux">填0不消耗</div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+        <label class="layui-form-label required">激励广告使用：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="adgo" value="1" title="开启" >
+            <input type="radio" name="adgo" value="0" title="关闭"  checked>
+        </div>
+        <div class="layui-form-mid layui-word-aux">开启后，用户积分不足时，会显示看一段广告快捷使用功能</div>
+    </div>
+        
+         <div class="layui-form-item">
+        <label class="layui-form-label required">激励广告保存：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="adsave" value="1" title="开启" lay-filter="adsave" >
+            <input type="radio" name="adsave" value="0" title="关闭" lay-filter="adsave" checked>
+        </div>
+        <div class="layui-form-mid layui-word-aux">用户处理完图片是否需要看广告</div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label required">微信端：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="wx" value="1" title="显示" >
+            <input type="radio" name="wx" value="0" title="隐藏"  checked>
+        </div>
+        <div class="layui-form-mid layui-word-aux">是否在微信端显示</div>
+    </div>
+    
+     <div class="layui-form-item">
+        <label class="layui-form-label required">字节端：</label>
+        <div class="layui-input-block">
+            
+          <input type="radio" name="zj" value="1" title="显示" >
+            <input type="radio" name="zj" value="0" title="隐藏"  checked>
+        </div>
+        <div class="layui-form-mid layui-word-aux">是否在字节跳动端显示</div>
+    </div>
+        
+        <div class="layui-form-item">
+        <label class="layui-form-label required">是否显示：</label>
+        <div class="layui-input-block">
+          <input type="radio" name="status" value="1" title="显示" lay-filter="status" checked>
+            <input type="radio" name="status" value="0" title="隐藏" lay-filter="status" >
+        </div>
+        <div class="layui-form-mid layui-word-aux">可适当隐藏某些功能规避审核</div>
+    </div>
+        
+       <div class="layui-form-item">
+            <label class="layui-form-label">排序:</label>
+            <div class="layui-input-block">
+                <input type="number" name="sort" class="layui-input"  placeholder="输入排序等级" value="0">
+                <div class="layui-form-mid layui-word-aux">数字越大越靠前</div>
+            </div>
+            
+        </div>
+
+
+
+
+
+        <div class="hr-line"></div>
+        <div class="layui-form-item text-center">
+            <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit>确认</button>
+            <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "lbwxapp": "/components/wxapp/lbwxapp",
+    "ttad": "/components/wxad/ttad",
+    "inad": "/components/wxad/inad"
+  }
+}

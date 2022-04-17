@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "status-bar": "/components/uni-nav-bar/uni-status-bar"
+  },
+  "component": true
+}

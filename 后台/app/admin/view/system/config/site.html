@@ -1,0 +1,191 @@
+
+<form id="app-form" class="layui-form layuimini-form">
+
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">小程序名称</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_xcxtitle" class="layui-input" lay-verify="required" placeholder="请输入小程序名称" value="{:sysconfig('config','config_xcxtitle')}">
+            <tip>会在小程序首页顶部显示</tip>
+        </div>
+    </div>
+
+
+<div class="layui-form-item">
+        <label class="layui-form-label">Appid</label>
+        <div class="layui-input-block">
+            <input type="text" name="site_appid" class="layui-input" lay-verify="required" placeholder="请输入小程序appid" value="{:sysconfig('site','site_appid')}">
+            <tip>在小程序后台查看</tip>
+        </div>
+    </div>
+
+<div class="layui-form-item">
+        <label class="layui-form-label">Appsecret</label>
+        <div class="layui-input-block">
+            <input type="text" name="site_appsecret" class="layui-input" lay-verify="required" placeholder="请输入小程序appsecret" value="{:sysconfig('site','site_appsecret')}">
+            <tip>在小程序后台查看</tip>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">任务签到开关：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="config_task" value="1" title="开启" lay-filter="config_task"  {if sysconfig('config','config_task')==1}checked=""{/if}>
+            <input type="radio" name="config_task" value="2" title="关闭" lay-filter="config_task" {if sysconfig('config','config_task')==2}checked=""{/if}>
+           
+        </div>
+        <tip>谨慎关闭，关闭后会隐藏所有签到入口，用户仅能通过充值获取积分</tip>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label required">开启支付：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="config_pay" value="1" title="开启" lay-filter="config_pay"  {if sysconfig('config','config_pay')==1}checked=""{/if}>
+            <input type="radio" name="config_pay" value="2" title="关闭" lay-filter="config_pay" {if sysconfig('config','config_pay')==2}checked=""{/if}>
+           
+        </div>
+    </div>
+    
+    <div id="zhifu" {if sysconfig('config','config_pay')==2}style="display:none" {/if}>
+    <div class="layui-form-item" >
+        <label class="layui-form-label">商户号</label>
+        <div class="layui-input-block">
+            <input type="text" name="site_mchid" class="layui-input"  placeholder="请输入关联此小程序的支付商户号" value="{:sysconfig('site','site_mchid')}">
+            <tip>在微信支付后台查看</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">支付密钥</label>
+        <div class="layui-input-block">
+            <input type="text" name="site_paykey" class="layui-input"  placeholder="微信支付32位密钥" value="{:sysconfig('site','site_paykey')}">
+            <tip>在微信支付后台查看，自己设置的32位密钥</tip>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">IOS端支付：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="config_iospay" value="1" title="开启" lay-filter="config_iospay"  {if sysconfig('config','config_iospay')==1}checked=""{/if}>
+            <input type="radio" name="config_iospay" value="2" title="关闭" lay-filter="config_iospay" {if sysconfig('config','config_iospay')==2}checked=""{/if}>
+           
+        </div>
+        <tip>微信小程序禁止IOS端虚拟支付，属违规行为，请谨慎开启</tip>
+    </div>
+</div>
+<div class="layui-form-item">
+        <label class="layui-form-label required">强制登录：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="config_silogin" value="1" title="开启" lay-filter="config_silogin"  {if sysconfig('config','config_silogin')==1}checked=""{/if}>
+            <input type="radio" name="config_silogin" value="2" title="关闭" lay-filter="config_silogin" {if sysconfig('config','config_silogin')==2}checked=""{/if}>
+        </div>
+        <tip>开启后使用任何功能都需强制登录</tip>
+    </div>
+  <div class="layui-form-item">
+        <label class="layui-form-label">小程序分享标题：</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_share_title" class="layui-input" lay-verify="required" placeholder="小程序分享标题" value="{:sysconfig('config','config_share_title')}">
+            <tip>分享时显示</tip>
+        </div>
+    </div>
+    
+
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">小程序分享封面</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="config_share_image" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传小程序分享封面" value="{:sysconfig('config','config_share_image')}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="config_share_image" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_config_share_image" data-upload-select="config_share_image" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+
+   <div class="layui-form-item">
+        <label class="layui-form-label">客服精修：</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_kfjx" class="layui-input" placeholder="输入按钮上的文字" value="{:sysconfig('config','config_kfjx')}">
+            <tip>这个按钮会显示在每个图片处理页，用户点击会弹出微信客服二维码，如果不想显示请留空</tip>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">客服微信号：</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_wxcode" class="layui-input" lay-verify="required" placeholder="请输入客服微信号" value="{:sysconfig('config','config_wxcode')}">
+            <tip>客服微信号</tip>
+        </div>
+    </div>
+
+     <div class="layui-form-item">
+        <label class="layui-form-label">微信客服二维码</label>
+        <div class="layui-input-block layuimini-upload">
+            <input name="config_wxkefu_image" class="layui-input layui-col-xs6" lay-verify="required" placeholder="请上传客服个人二维码图" value="{:sysconfig('config','config_wxkefu_image')}">
+            <div class="layuimini-upload-btn">
+                <span><a class="layui-btn" data-upload="config_wxkefu_image" data-upload-number="one"><i class="fa fa-upload"></i> 上传</a></span>
+                <span><a class="layui-btn layui-btn-normal" id="select_config_wxkefu_image" data-upload-select="config_wxkefu_image" data-upload-number="one"><i class="fa fa-list"></i> 选择</a></span>
+            </div>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">公众号名称：</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_gzhname" class="layui-input" placeholder="请输入关注公众号名称" value="{:sysconfig('config','config_gzhname')}">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">公众号关注链接：</label>
+        <div class="layui-input-block">
+            <input type="text" name="config_gzhurl" class="layui-input" placeholder="请输入关注公众号链接" value="{:sysconfig('config','config_gzhurl')}">
+            <tip>公众号需关联了小程序</tip>
+        </div>
+    </div>
+   
+    <div class="hr-line"></div>
+    <div class="layui-form-item">
+            <label class="layui-form-label">使用说明</label>
+            <div class="layui-input-block">
+                <textarea name="site_help" rows="30" class="layui-textarea editor" placeholder="请输入使用说明">{:sysconfig('site','site_help')}</textarea>
+            </div>
+        </div>
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">VIP特权介绍</label>
+            <div class="layui-input-block">
+                <textarea name="site_viptq" rows="10" class="layui-textarea editor" placeholder="VIP特权介绍">{:sysconfig('site','site_viptq')}</textarea>
+            </div>
+        </div>
+        <div class="hr-line"></div>
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="system.config/save" data-refresh="false">确认</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+    </div>
+
+</form>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'upload','colorpicker'], function(){
+        var form = layui.form
+    ,layer = layui.layer
+    ,layedit = layui.layedit
+    ,laydate = layui.laydate
+	,colorpicker = layui.colorpicker
+    ,upload = layui.upload;
+    //此处即为 radio 的监听事件
+    form.on('radio(config_pay)', function(data){
+    	 console.log(data.value); //得到radio原始DOM对象
+    	 if(data.value==2){
+    	     $('#zhifu').hide();
+    	 }	
+    	 else{
+    	      $('#zhifu').show();
+    	 }
+    });
+    		
+        
+        
+    })
+    
+</script>

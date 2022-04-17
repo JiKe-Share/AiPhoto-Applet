@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.top {
+  width: 100%;
+  background-color: #ffffff;
+}
+.screen-swiper {
+  width: 95%;
+  margin: auto;
+  min-height: 1rpx;
+  overflow: hidden;
+}
+.tool-w {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: 20rpx;
+  padding: 20rpx 0rpx;
+}
+.tools {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.tools .tool {
+  width: 46%;
+  height: 230rpx;
+  /* background-color: #0081FF; */
+  margin-bottom: 20rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  position: relative;
+  -webkit-animation: fade-in-left 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-left 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.tools .tool .image {
+  width: 100%;
+  height: 230rpx;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 100%;
+}
+.tools .tool .tooltext {
+  position: absolute;
+  width: 90%;
+  bottom: 5rpx;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7));
+  color: #303030;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  box-shadow: 0px 0px 78px -13px rgba(0, 0, 0, 0.76);
+}
+.tools .tool .tooltext .toolname {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  /* 这里是超出几行省略 */
+  overflow: hidden;
+  color: #000000;
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.tools .tool .tooltext .tooldesc {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  /* 这里是超出几行省略 */
+  overflow: hidden;
+  color: #474747;
+  font-size: 25rpx;
+}
+

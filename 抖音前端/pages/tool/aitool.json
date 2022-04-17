@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "cmd-progress": "/components/cmd-progress/cmd-progress",
+    "wyb-popup": "/components/wyb-popup/wyb-popup",
+    "login": "/components/login/login",
+    "getinte": "/components/getinte/getinte",
+    "ttad": "/components/wxad/ttad",
+    "tjtool": "/components/wxapp/tjtool",
+    "inad": "/components/wxad/inad",
+    "tjwxapp": "/components/wxapp/tjwxapp"
+  }
+}

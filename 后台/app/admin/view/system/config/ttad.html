@@ -1,0 +1,251 @@
+
+<form id="app-form" class="layui-form layuimini-form">
+
+    
+    
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">banner广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ttad_bannerid" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('ttad','ttad_bannerid')}">
+            <tip>在字节跳动开发者后台流量主页自行创建</tip>
+        </div>
+    </div>
+
+
+<div class="layui-form-item">
+        <label class="layui-form-label">激励广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ttad_reward" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('ttad','ttad_reward')}">
+             <tip>在字节跳动开发者后台流量主页自行创建</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">插屏广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ttad_interid" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('ttad','ttad_interid')}">
+            <tip>在字节跳动开发者后台流量主页自行创建</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">信息流广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="ttad_xxlid" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('ttad','ttad_xxlid')}">
+            <tip>在字节跳动开发者后台流量主页自行创建</tip>
+        </div>
+    </div>
+    
+    
+   <div class="layui-form-item">
+        <label class="layui-form-label">插屏广告显示时间/频率：</label>
+        <div class="layui-input-block">
+            <input type="number" name="ttad_insettime" class="layui-input" lay-verify="required" placeholder="请输入一个数字" value="{:sysconfig('ttad','ttad_insettime')}">
+            <tip>单位：秒</tip>
+        </div>
+    </div>
+   <div class="layui-form-item">
+        <label class="layui-form-label required">是否开启高频插屏广告：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="ttad_insetgp" value="1" title="开启" lay-filter="site_pay"  {if sysconfig('ttad','ttad_insetgp')==1}checked=""{/if}>
+            <input type="radio" name="ttad_insetgp" value="0" title="关闭" lay-filter="site_pay" {if sysconfig('ttad','ttad_insetgp')==0}checked=""{/if}>
+           <tip>开启后，每个页面将无限检测并展示插屏广告，影响用户体验，但会提高收入</tip>
+        </div>
+        
+    </div>
+   
+   
+      <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">首页上方显示广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_index1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_index1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">首页下方显示广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_index2ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_index2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+     
+     <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">人脸趣玩页上方广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_face1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_face1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+ <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">人脸趣玩页下方广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_face2ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_face2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">更多工具页顶部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_app1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_app1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+        <label class="layui-form-label">更多工具页广告频率：</label>
+        <div class="layui-input-block">
+            <input type="number" name="ttad_app2ad" class="layui-input" lay-verify="required" placeholder="请输入一个数字" value="{:sysconfig('ttad','ttad_app2ad')}">
+            <tip>多少条列表展示一个广告</tip>
+        </div>
+    </div>
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">更多工具页列表广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_app3ad">
+                    {foreach $ttadlist as $key=>$val}
+                        <option value="{$key}" {if sysconfig('ttad','ttad_app3ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+          <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">个人中心上方广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_my1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_my1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">个人中心底部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_my2ad">
+                     {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_my2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用记录页顶部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_log1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_log1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用记录页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_log2ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_log2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+          <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">签到任务页上方广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_task1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_task1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">签到任务页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_task2ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_task2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用帮助页顶部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_help1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_help1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+          <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用帮助页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_help2ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_help2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">图片处理页中部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_tool1ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_tool1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">图片处理页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_tool2ad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_tool2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">小程序弹出窗口广告</label>
+            <div class="layui-input-inline">
+                <select name="ttad_showad">
+                    {foreach $ttadlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('ttad','ttad_showad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+    <div class="hr-line"></div>
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="system.config/save" data-refresh="false">确认</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+    </div>
+</form>

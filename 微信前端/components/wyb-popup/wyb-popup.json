@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxad": "/components/wxad/wxad"
+  },
+  "component": true
+}

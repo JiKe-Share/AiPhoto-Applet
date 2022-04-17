@@ -1,0 +1,61 @@
+.tool {
+  width: 95%;
+  margin: 20rpx auto;
+}
+.tool .toolface {
+  width: 100%;
+  min-height: 230rpx;
+  margin-bottom: 20rpx;
+  background-size: 102% auto;
+  border-radius: 20rpx;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2rpx 2rpx 8rpx 5rpx rgba(50, 50, 50, 0.75);
+}
+.tool .toolface .text {
+  position: absolute;
+  display: inline-block;
+  height: 45rpx;
+  background-color: #ffffff;
+  top: 0rpx;
+  border-radius: 20rpx 0rpx 20rpx 20rpx;
+  padding: 0rpx 15rpx;
+  line-height: 45rpx;
+  right: 0rpx;
+  opacity: .8;
+}
+.tool .toolface .text .title {
+  font-size: 28rpx;
+  font-weight: 700;
+  text-align: center;
+}
+.tool .toolface:nth-child(even) {
+  -webkit-animation: fade-in-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.tool .toolface:nth-child(odd) {
+  -webkit-animation: fade-in-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-left 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.douyints {
+  width: 100%;
+  height: 50rpx;
+  background-color: #ffffff;
+  color: #ff9900;
+  text-align: center;
+  font-size: 25rpx;
+  position: fixed;
+  top: 0rpx;
+  box-shadow: 2rpx 2rpx 8rpx 5rpx rgba(50, 50, 50, 0.75);
+}
+.douyints .text-gray {
+  font-size: 30rpx;
+  color: #ff9900;
+  margin-right: 15rpx;
+}
+.ks {
+  height: 50rpx;
+}
+

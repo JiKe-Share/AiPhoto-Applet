@@ -1,0 +1,272 @@
+
+<form id="app-form" class="layui-form layuimini-form">
+
+    
+    
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">banner广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="wxad_wxbanner" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('wxad','wxad_wxbanner')}">
+            <tip>在微信小程序后台流量主页自行创建</tip>
+        </div>
+    </div>
+
+
+<div class="layui-form-item">
+        <label class="layui-form-label">激励广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="wxad_wxreward" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('wxad','wxad_wxreward')}">
+            <tip>在微信小程序后台流量主页自行创建</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">插屏广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="wxad_wxinter" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('wxad','wxad_wxinter')}">
+            <tip>在微信小程序后台流量主页自行创建</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">视频广告ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="wxad_wxvideo" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('wxad','wxad_wxvideo')}">
+            <tip>在微信小程序后台流量主页自行创建</tip>
+        </div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">原生广告A ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="wxad_wxcustomA" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('wxad','wxad_wxcustomA')}">
+            <tip>在微信小程序后台流量主页自行创建</tip>
+        </div>
+    </div>
+    
+   <div class="layui-form-item">
+        <label class="layui-form-label">原生广告B ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="wxad_wxcustomB" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('wxad','wxad_wxcustomB')}">
+            <tip>在微信小程序后台流量主页自行创建</tip>
+        </div>
+    </div>
+<div class="layui-form-item">
+        <label class="layui-form-label">原生广告C ID：</label>
+        <div class="layui-input-block">
+            <input type="text" name="wxad_wxcustomC" class="layui-input" lay-verify="required" placeholder="请输入流量主广告ID" value="{:sysconfig('wxad','wxad_wxcustomC')}">
+            <tip>在微信小程序后台流量主页自行创建</tip>
+        </div>
+    </div>
+   <div class="layui-form-item">
+        <label class="layui-form-label">插屏广告显示时间/频率：</label>
+        <div class="layui-input-block">
+            <input type="number" name="wxad_wxinsettime" class="layui-input" lay-verify="required" placeholder="请输入一个数字" value="{:sysconfig('wxad','wxad_wxinsettime')}">
+            <tip>单位：秒</tip>
+        </div>
+    </div>
+   <div class="layui-form-item">
+        <label class="layui-form-label required">是否开启高频插屏广告：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="wxad_insetgp" value="1" title="开启" lay-filter="site_pay"  {if sysconfig('wxad','wxad_insetgp')==1}checked=""{/if}>
+            <input type="radio" name="wxad_insetgp" value="0" title="关闭" lay-filter="site_pay" {if sysconfig('wxad','wxad_insetgp')==0}checked=""{/if}>
+           <tip>开启后，每个页面将无限检测并展示插屏广告，影响用户体验，但会提高收入</tip>
+        </div>
+        
+    </div>
+   
+   
+      <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">首页上方显示广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxindex1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxindex1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">首页下方显示广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxindex2ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxindex2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+     
+     <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">人脸趣玩页上方广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxface1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxface1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+ <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">人脸趣玩页下方广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxface2ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxface2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">更多工具页顶部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxwxapp1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxwxapp1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+        <label class="layui-form-label">更多工具页广告频率：</label>
+        <div class="layui-input-block">
+            <input type="number" name="wxad_wxwxapp2ad" class="layui-input" lay-verify="required" placeholder="请输入一个数字" value="{:sysconfig('wxad','wxad_wxwxapp2ad')}">
+            <tip>多少条列表展示一个广告</tip>
+        </div>
+    </div>
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">更多工具页列表广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxwxapp3ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxwxapp3ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+          <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">个人中心上方广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxmy1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxmy1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">个人中心底部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxmy2ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxmy2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用记录页顶部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxlog1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxlog1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用记录页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxlog2ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxlog2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+          <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">签到任务页上方广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxtask1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxtask1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">签到任务页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxtask2ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxtask2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用帮助页顶部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxhelp1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxhelp1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+          <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">使用帮助页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxhelp2ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxhelp2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">图片处理页中部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxtool1ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxtool1ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+         <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">图片处理页底部广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxtool2ad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxtool2ad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        
+        <div class="layui-form-item  layui-row layui-col-xs12">
+            <label class="layui-form-label required">小程序弹出窗口广告</label>
+            <div class="layui-input-inline">
+                <select name="wxad_wxshowad">
+                    {foreach $adlist as $key=>$val}
+                    <option value="{$key}" {if sysconfig('wxad','wxad_wxshowad')==$key}selected=""{/if}>{$val}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+    <div class="hr-line"></div>
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="system.config/save" data-refresh="false">确认</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+    </div>
+</form>

@@ -1,0 +1,125 @@
+ <div class="layuimini-container">
+    <div class="layuimini-main" id="app">
+
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief"><div class="layui-tab-content">
+                <div class="layui-tab-item layui-show">
+<form id="app-form" class="layui-form layuimini-form">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户注册后获得积分：</label>
+        <div class="layui-input-block">
+            <input type="number" name="site_inte" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{:sysconfig('site','site_inte')}">
+            <tip>用户第一次注册获得积分数</tip>
+        </div>
+    </div>
+    
+    
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label">邀请用户获得积分：</label>
+        <div class="layui-input-block">
+            <input type="number" name="config_inviteinte" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{:sysconfig('config','config_inviteinte')}">
+            <tip>用户邀请好友使用小程序获得积分</tip>
+        </div>
+    </div>
+    
+     <div class="layui-form-item">
+        <label class="layui-form-label">每天邀请上限：</label>
+        <div class="layui-input-block">
+            <input type="number" name="config_invitenum" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{:sysconfig('config','config_invitenum')}">
+            <tip>每天最多邀请几个好友得积分，多邀请的不增积分</tip>
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label required">强制邀请新用户：</label>
+        <div class="layui-input-block">
+            <input type="radio" name="site_invitenew" value="1" title="开启" lay-filter="site_invitenew"  {if sysconfig('site','site_invitenew')==1}checked=""{/if}>
+            <input type="radio" name="site_invitenew" value="2" title="关闭" lay-filter="site_invitenew" {if sysconfig('site','site_invitenew')==2}checked=""{/if}>
+        </div>
+         <tip>开启后，邀请小程序老用户将不赠积分</tip>
+    </div>
+    
+    
+        <div class="hr-line"></div>
+        <div class="layui-form-item">
+        <label class="layui-form-label required">签到需要看激励广告？：</label>
+        <div class="layui-input-block">
+            
+            <input type="radio" name="site_qdad" value="1" title="开启" lay-filter="site_qdad"  {if sysconfig('site','site_qdad')==1}checked=""{/if}>
+            <input type="radio" name="site_qdad" value="2" title="关闭" lay-filter="site_qdad" {if sysconfig('site','site_qdad')==2}checked=""{/if}>
+           
+        </div>
+        <tip>开启后，用户需要看激励广告才能完成签到</tip>
+    </div>
+        <div class="layui-form-item">
+        <label class="layui-form-label">签到（第一天）：</label>
+        <div class="layui-input-block">
+            <input type="number" name="qd1" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{$qd1}">
+          
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">签到（第二天）：</label>
+        <div class="layui-input-block">
+            <input type="number" name="qd2" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{$qd2}">
+          
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">签到（第三天）：</label>
+        <div class="layui-input-block">
+            <input type="number" name="qd3" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{$qd3}">
+          
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">签到（第四天）：</label>
+        <div class="layui-input-block">
+           <input type="number" name="qd4" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{$qd4}">
+          
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">签到（第五天）：</label>
+        <div class="layui-input-block">
+            <input type="number" name="qd5" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{$qd5}">
+          
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">签到（第六天）：</label>
+        <div class="layui-input-block">
+            <input type="number" name="qd6" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{$qd6}">
+          
+        </div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label">签到（第七天）：</label>
+        <div class="layui-input-block">
+           <input type="number" name="qd7" class="layui-input" lay-verify="required" placeholder="请输入数字" value="{$qd7}">
+        </div>
+    </div>
+     <div class="layui-form-item">
+         <label class="layui-form-label">连签奖励</label>
+             <div class="layui-input-inline">
+                   连续签到<input type="number" name="lxday" lay-verify="require|number" autocomplete="off" class="layui-input" value="{$lxday}">天奖励
+                   <input type="number" name="lxinte" lay-verify="require|number" autocomplete="off" class="layui-input" value="{$lxinte}">积分
+            </div>
+
+     </div>
+         
+    <input type="text" name="page" hidden="" value="qd">
+        
+        
+        
+    <div class="layui-form-item text-center">
+        <button type="submit" class="layui-btn layui-btn-normal layui-btn-sm" lay-submit="system.config/save" data-refresh="false">确认</button>
+        <button type="reset" class="layui-btn layui-btn-primary layui-btn-sm">重置</button>
+    </div>
+
+</form>
+</div>
+</div>   </div>
+
+    </div>
+</div>
